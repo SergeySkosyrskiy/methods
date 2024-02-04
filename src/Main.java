@@ -32,5 +32,5 @@ public class Main {
         printSeparator();
         int total = sum(issuesByMonth);
         printIssues(total);
-    }*/
+     }*/
 }
