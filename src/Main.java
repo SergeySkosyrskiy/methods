@@ -2,35 +2,75 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    /*public static void printSeparator() {
-        System.out.println("+++++++++++");
-        System.out.println("-----------");
-    }
-
-    public static void printIssues(int issueCount) {
-        System.out.println(issueCount);
-    }
-
-    public static int sum(int[] numbers ) {
-        int sum =0;
-        for (int i = 0; i < numbers.length; i++) {
-            sum= sum+numbers[i];
-        }
-        return sum;
-    }
-
     public static void main(String[] args) {
-        int[] issuesByMonth = {4, 6, 7, 9, 2, 5, 12, 3, 7, 10, 6, 7, 1, 8};
-        printSeparator();
+        task1();
+        task2();
+        task3();
+    }
 
-        for (int i = 0; i < issuesByMonth.length; i++) {
-            printIssues(issuesByMonth[i]);
-            if ((i + 1) % 3 == 0) {
-                printSeparator();
-            }
+    private static void task1() {
+        System.out.println("Задача1");
+        int year = 2025;
+        printIsLeapYearResult(year);
+    }
+
+    private static void printIsLeapYearResult(int year) {
+        if (isaBoolean(year) || year % 400 == 0) {
+            System.out.println(year + " год — високосный год");
+        } else System.out.println(year + " год — невисокосный год");
+    }
+
+    private static boolean isaBoolean(int year) {
+        return year % 4 == 0 && year % 100 != 0;
+    }
+
+
+    private static void task2() {
+        System.out.println("Задача№2");
+        int clientOS = 0;
+        int versionDevice = 2015;
+        int clientDeviceYear = 2014;
+        recomendatedAppVersion(clientOS, clientDeviceYear, versionDevice);
+
+
+    }
+
+    private static void recomendatedAppVersion(int clientOS, int clientDeviceYear, int versionDevice) {
+
+        if (clientOS != 0 && clientOS != 1) {
+            System.out.println("Неизвестная операционная система");
+        } else if (clientOS == 1 && clientDeviceYear >= versionDevice) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else if (clientOS == 1) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (clientDeviceYear >= versionDevice) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         }
-        printSeparator();
-        int total = sum(issuesByMonth);
-        printIssues(total);
-     }*/
+    }
+
+    private static void task3() {
+        System.out.println("Задача№3");
+        int deliveryDistance = 101;
+        getDeliveryTime(deliveryDistance);
+    }
+
+    private static void getDeliveryTime(int deliveryDistance) {
+        int day = 1;
+        if (deliveryDistance <= 20) {
+            System.out.println("Потребуется дней: " + day);
+        } else if (deliveryDistance <= 60) {
+            day = day + 1;
+            System.out.println("Потребуется дней: " + day);
+        } else if (deliveryDistance <= 100) {
+            day = day + 2;
+            System.out.println("Потребуется дней: " + day);
+        } else {
+            System.out.println("Доставки нет");
+        }
+    }
+
+
 }
+
